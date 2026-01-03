@@ -47,14 +47,54 @@ pip install torch torchvision pandas numpy matplotlib tqdm pyyaml
 
 ## Dataset Setup
 
-1. Download the ABO dataset and extract to `abo_dataset/` folder:
+This project uses the **Amazon Berkeley Objects (ABO) Dataset**.
+
+### Download the Dataset
+
+1. **Download ABO Small Images** from:
+   - Official: https://amazon-berkeley-objects.s3.amazonaws.com/index.html
+   - Direct link: `abo-images-small.tar` (~3GB)
+
+2. **Download metadata**:
+   - `images.csv.gz` from the listings metadata
+
+3. **Extract and organize** the files:
+```bash
+# Create dataset folder
+mkdir -p abo_dataset/metadata
+
+# Extract images
+tar -xf abo-images-small.tar -C abo_dataset/
+mv abo_dataset/images abo_dataset/small
+
+# Move metadata
+mv images.csv.gz abo_dataset/metadata/
+gunzip abo_dataset/metadata/images.csv.gz
+```
+
+4. **Final folder structure should look like**:
 ```
 abo_dataset/
 ├── metadata/
-│   └── images.csv
+│   └── images.csv       # Image metadata
 └── small/
-    └── [image folders]
+    ├── 00/
+    │   └── 00xxxxx.jpg
+    ├── 01/
+    │   └── 01xxxxx.jpg
+    └── ...              # More image folders
 ```
+
+### Alternative: Use Your Own Dataset
+
+You can use any image dataset by modifying `config.yaml`:
+```yaml
+data:
+  csv_file: "your_dataset/metadata.csv"  # CSV with 'path' column
+  img_dir: "your_dataset/images"
+```
+
+Your CSV should have a `path` column with relative image paths.
 
 ## Running the Project
 
