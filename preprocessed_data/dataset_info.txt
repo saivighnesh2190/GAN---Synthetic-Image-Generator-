@@ -1,0 +1,10 @@
+Preprocessed ABO Dataset
+========================
+Total images: 5000
+Train images: 4750
+Test images: 250
+Train/Test split: 0.95/0.050000000000000044
+Image size: 64x64
+Channels: 3 (RGB)
+Data range: [-1, 1] (normalized with tanh)
+Original dataset: ABO small

@@ -1,0 +1,43 @@
+# =============================================================================
+# Module 1: Data Pipeline & Preprocessing Configuration
+# =============================================================================
+
+# Data Acquisition
+data:
+  csv_file: "abo_dataset/metadata/images.csv"
+  img_dir: "abo_dataset/small"
+  output_dir: "preprocessed_data"
+  allowed_formats:
+    - "jpg"
+    - "png"
+    - "jpeg"
+
+# Preprocessing
+preprocessing:
+  image_size: 64
+  channels: 3
+  normalization: "tanh"  # Output range: [-1, 1]
+  grayscale: false
+
+# Train/Test Split
+split:
+  train_split: 0.95
+  test_split: 0.05
+
+# DataLoader
+dataloader:
+  batch_size: 16
+  max_samples: 5000
+  shuffle: true
+  num_workers: 0
+  pin_memory: false
+
+# Output Files
+outputs:
+  train_file: "preprocessed_data/train_data.pt"
+  test_file: "preprocessed_data/test_data.pt"
+  train_npz: "preprocessed_data/train_data.npz"
+  test_npz: "preprocessed_data/test_data.npz"
+  train_samples: "preprocessed_data/train_samples.png"
+  test_samples: "preprocessed_data/test_samples.png"
+  dataset_info: "preprocessed_data/dataset_info.txt"

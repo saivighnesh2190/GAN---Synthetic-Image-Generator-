@@ -1,0 +1,42 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Large Data Files (too big for GitHub)
+*.zip
+*.tar.gz
+preprocessed_data/*.pt
+preprocessed_data/*.npz
+abo_dataset/
+
+# Keep sample images
+!preprocessed_data/train_samples.png
+!preprocessed_data/test_samples.png
+!preprocessed_data/dataset_info.txt
+
+# Model checkpoints (large files)
+checkpoints/
+*.pth
+*.ckpt
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
