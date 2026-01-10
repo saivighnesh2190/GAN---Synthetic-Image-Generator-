@@ -6,6 +6,13 @@ A complete Vanilla GAN implementation for generating synthetic plant leaf diseas
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-brightgreen.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Live%20Demo-yellow.svg)](https://huggingface.co/spaces/vighnesh2190/generate-leaves-images)
+
+## 🌐 Live Demo
+
+**Try it now:** [https://huggingface.co/spaces/vighnesh2190/generate-leaves-images](https://huggingface.co/spaces/vighnesh2190/generate-leaves-images)
+
+Generate synthetic leaf disease images directly in your browser - no installation required!
 
 ## 📋 Overview
 
@@ -198,6 +205,25 @@ docker run -p 8501:8501 gan-generator streamlit run app.py --server.port 8501
 - CUDA (optional, for GPU training)
 
 See `requirements.txt` for full list.
+
+## 🚀 Deployment
+
+### Hugging Face Spaces (Recommended)
+
+The app is deployed at: **[https://huggingface.co/spaces/vighnesh2190/generate-leaves-images](https://huggingface.co/spaces/vighnesh2190/generate-leaves-images)**
+
+To deploy your own:
+1. Create a new Space at [huggingface.co/new-space](https://huggingface.co/new-space)
+2. Select **Docker** SDK with **Streamlit** template
+3. Upload: `app.py`, `G_final.pt`, `requirements.txt`
+4. Update `Dockerfile` to copy your files
+5. Wait for build to complete
+
+### Local Docker
+```bash
+docker build -t gan-generator .
+docker run -p 8501:8501 gan-generator
+```
 
 ## 📜 License
 
