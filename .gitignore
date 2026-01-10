@@ -21,21 +21,31 @@ __pycache__/
 *.tar.gz
 preprocessed_data/*.pt
 preprocessed_data/*.npz
-abo_dataset/
 
 # Keep sample images
 !preprocessed_data/train_samples.png
 !preprocessed_data/test_samples.png
 !preprocessed_data/dataset_info.txt
 
-# Model checkpoints (large files)
-checkpoints/
+# Model checkpoints (large files - download from releases)
+checkpoints/*.pt
 *.pth
 *.ckpt
 
-# Logs
+# Dataset (too large ~2GB - download separately)
+leaf_dataset/
+abo_dataset/
+
+# Logs (generated during training)
 logs/
 *.log
+model_versions/
+
+# Generated samples (can be regenerated)
+samples/
+
+# Figures (can be regenerated)
+figures/
 
 # OS
 .DS_Store

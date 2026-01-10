@@ -41,3 +41,23 @@ outputs:
   train_samples: "preprocessed_data/train_samples.png"
   test_samples: "preprocessed_data/test_samples.png"
   dataset_info: "preprocessed_data/dataset_info.txt"
+
+# =============================================================================
+# Module 3: Training Pipeline Configuration
+# =============================================================================
+
+training:
+  num_epochs: 100
+  batch_size: 64
+  latent_dim: 100
+  lr: 0.0002
+  beta1: 0.5
+  save_interval: 10        # Save samples every N epochs
+  checkpoint_interval: 10  # Save checkpoint every N epochs
+  
+  # Anti-failure mechanisms
+  label_smoothing: true
+  smooth_real_label: 0.9
+  smooth_fake_label: 0.0
+  gradient_clip: true
+  gradient_clip_value: 1.0
